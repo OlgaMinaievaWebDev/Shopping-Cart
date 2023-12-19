@@ -29,21 +29,22 @@ addBtn.addEventListener("click", function () {
 
 //fetching data from DB
 onValue(shoppingListDB, function (snapshot) {
-  let itemsArr = Object.values(snapshot.val());
+  let itemsArr = Object.entries(snapshot.val());
+
   clearShoppingList();
   for (let i = 0; i < itemsArr.length; i++) {
-    addItem(itemsArr[i]);
+    let currentItem = itemsArr[i];
+    let currentItemID = currentItem[0];
+    let currentItemValue = currentItem[1];
+
+    addItem(currentItem);
   }
 });
-
-
 
 //clear shopping list
 function clearShoppingList() {
   shoppingListEl.innerHTML = "";
 }
-
-
 
 //clear input field
 function clearInputEl() {
@@ -52,5 +53,9 @@ function clearInputEl() {
 
 //add items to list
 function addItem(item) {
-  shoppingListEl.innerHTML += `<li>${item}</li>`;
+ let itemId = item[0]
+ let itemValue = item[1]
+  let li = document.createElement("li");
+  li.textContent = itemValue;
+  shoppingListEl.appendChild(li);
 }
