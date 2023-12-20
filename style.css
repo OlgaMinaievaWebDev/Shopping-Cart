@@ -43,12 +43,12 @@ input {
 
 button {
   color: #fdfdfd;
-  background-color: #ac485a;
+  background-color: #ad2d45;
   
 }
 
 button:hover {
- background-color: #432000;
+ background-color: #daaa28;
  cursor: pointer;
 }
 
