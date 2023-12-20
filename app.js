@@ -43,7 +43,8 @@ onValue(shoppingListDB, function (snapshot) {
       addItem(currentItem);
     }
   } else {
-    shoppingListEl.textContent = "No items here ... yet";
+   shoppingListEl.textContent = "No items here ... yet";
+   shoppingListEl.style.fontSize = '20px';
   }
 });
 
